@@ -1,12 +1,8 @@
 package com.viva.live;
 
-import android.app.Application;
-
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.viva.live.base.BaseApplication;
 import com.viva.live.login.BuildConfig;
-import com.viva.live.service.component.ServiceLoader;
-import com.viva.live.service.log.ILogerService;
 import com.viva.live.service.log.RouterPath;
 
 /**
@@ -26,9 +22,13 @@ public class LoginApplication extends BaseApplication {
             ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
         }
         ARouter.init(this);
-        ServiceLoader<ILogerService> logImp = (ServiceLoader<ILogerService>) ARouter.getInstance().build(RouterPath.SERVICE_LOGGER, RouterPath.GROUP_SERVICE).navigation();
-        if (logImp != null) {
-            logImp.load(null).init(this, null);
+        initServiceLoader();
+    }
+
+    public void initServiceLoader(){
+        for (String router:
+                RouterPath.PRE_LOAD_SERVICE) {
+            ARouter.getInstance().build(router).navigation();
         }
     }
 }

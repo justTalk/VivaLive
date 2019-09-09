@@ -39,7 +39,7 @@ import io.agora.rtc.video.VideoEncoderConfiguration;
  * warn:
  * time: 2019-09-06
  */
-@Route(path = RouterPath.COMPONENT_LIVE_1V1, group = RouterPath.GROUP_BUSINESS)
+@Route(path = RouterPath.COMPONENT_LIVE_1V1)
 public class LiveActivity extends AppCompatActivity {
 
     @Override
@@ -125,10 +125,7 @@ public class LiveActivity extends AppCompatActivity {
     }
 
     private void d(String msg){
-        ServiceLoader<ILogerService> serviceLoader = (ServiceLoader<ILogerService>) ARouter.getInstance().build(RouterPath.SERVICE_LOGGER, RouterPath.GROUP_SERVICE).navigation();
-        if (serviceLoader != null) {
-            serviceLoader.load(null).d("Live", "1V1", msg);
-        }
+
     }
 
     private boolean checkAndRequestPermissions() {

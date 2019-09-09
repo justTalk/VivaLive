@@ -1,2 +1,2 @@
-include ':app', ':base', ':service', ':logger', ':live', ':login'
+include ':app', ':base', ':service', ':logger', ':live', ':login', ':live-stream-agora', ':mmkv'
 rootProject.name='VivaLive'

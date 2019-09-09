@@ -1,6 +1,7 @@
 package com.viva.live;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.facade.template.IProvider;
@@ -14,12 +15,12 @@ import com.viva.live.service.log.RouterPath;
  * warn:
  * time: 2019-09-07
  */
-@Route(path = RouterPath.COMPONENT_LIVE, group = RouterPath.GROUP_BUSINESS)
+@Route(path = RouterPath.COMPONENT_LIVE)
 public class LiveServiceLoader extends ServiceLoader<Component> implements IProvider {
 
     @Override
     public void init(Context context) {
-
+        Log.d("ServiceLoader", "LiveServiceLoader init");
     }
 
     @Override

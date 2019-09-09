@@ -26,7 +26,7 @@ public class LoginActivity extends BaseFragmentActivity {
         findViewById(R.id.login_jump).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ARouter.getInstance().build(RouterPath.COMPONENT_LIVE_1V1, RouterPath.GROUP_BUSINESS).navigation();
+                ARouter.getInstance().build(RouterPath.COMPONENT_LIVE_1V1).navigation();
             }
         });
     }

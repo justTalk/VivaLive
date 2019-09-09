@@ -61,10 +61,9 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation rootProject.ext.dependencies["appcompat"]
     implementation rootProject.ext.dependencies["constraintlayout"]
-    implementation project(':logger')
     implementation project(':service')
     implementation project(':base')
+    implementation files('libs/agora-rtc-sdk.jar')
     implementation rootProject.ext.dependencies["arouter-api"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
-    implementation files('libs/agora-rtc-sdk.jar')
 }
